@@ -1,0 +1,170 @@
+.overflow-container {
+    width: 250px;
+    height: 100px; 
+    
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 2px solid; 
+    background-color: #f7f7f7;
+    
+    box-sizing: border-box; 
+}
+
+.content {
+    width: 300px; 
+    height: 150px; 
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    padding-right: 20px; 
+}
+
+.wide-content {
+    white-space: nowrap; 
+    width: 400px; 
+    height: auto; 
+}
+
+.long-word {
+    font-weight: bold;
+    color: darkred;
+}
+
+/* --- Specific Overflow Property --- */
+
+.visible-example {
+    border-color: green;
+    overflow: visible; 
+}
+
+.hidden-example {
+    border-color: red;
+    overflow: hidden; 
+}
+
+.clip-example {
+    border-color: purple;
+    overflow: clip; 
+}
+
+.clip-margin-example {
+    border-color: #00A86B; 
+    overflow: clip; 
+    overflow-clip-margin: 15px; 
+}
+
+.scroll-example {
+    border-color: orange;
+    overflow: scroll; 
+}
+
+.auto-example {
+    border-color: blue;
+    overflow: auto; 
+    height: 150px; 
+}
+
+/* --- Directional Axis (Overflow-x / Overflow-y) Demos --- */
+
+.axis-x-example {
+    border-color: #008080;
+    height: 60px; 
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.axis-y-example {
+    border-color: #A52A2A; 
+    width: 250px; 
+    height: 120px;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+}
+
+/* --- Overflow-wrap Demos --- */
+
+.wrap-example {
+
+    width: 200px; 
+    height: auto; 
+    min-height: 100px;
+    overflow-x: auto; 
+}
+
+
+.visible-overflow-problem-example {
+    border-color: #800080;
+    width: 200px; 
+    height: 100px;
+    overflow: visible; 
+    overflow-wrap: normal;
+}
+.visible-overflow-problem-example .content {
+    width: auto; 
+    height: auto;
+    padding-right: 10px;
+}
+
+
+.normal-wrap-example {
+    border-color: #800080;
+    overflow-wrap: normal;
+}
+
+.break-word-example {
+    border-color: #DAA520;
+    overflow-wrap: break-word;
+}
+
+.anywhere-wrap-example {
+    border-color: #FF4500; 
+    overflow-wrap: anywhere;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 { color: #2c3e50; }
+h2 { color: #34495e; }
+h3 { color: #2980b9; margin-top: 30px; }
+
+.property-list-section strong {
+    color: #c0392b;
+}
+
+.code-snippet {
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+    border-left: 4px solid #3498db;
+    font-family: monospace;
+    font-size: 1em;
+    margin: 5px 0;
+    white-space: pre-wrap;
+}
+
+.property-block {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid #ddd;
+}
+
+.property-title {
+    font-size: 1.1em;
+    color: #2c3e50;
+    list-style-type: none; 
+    margin-left: -18px;
+    margin-top: 10px;
+}
