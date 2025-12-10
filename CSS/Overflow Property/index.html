@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow Properties</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>Hi Guys, I'm SRIDHAR</h1>
+        <p>Today, My Topic is <b>CSS Overflow property</b></p>
+        <h2>CSS Overflow Properties</h2>
+
+        <div class="property-list-section">
+            <h3>The Properties are:</h3>
+            <ol>
+                <li><strong>Overflow</strong></li>
+                <ul class="shorthand-examples">
+                    <div class="property-block">
+                        <li class="property-title"><b>Visible (Default)</b></li>
+                        <p class="code-snippet"><b>overflow: </b>visible;</p>
+                        <div class="overflow-container visible-example">
+                            <p class="content">This is an example of **visible** overflow. Content spills out of the container's boundaries. This is the **default** browser behavior.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="property-block">
+                        <li class="property-title"><b>Hidden</b></li>
+                        <p class="code-snippet"><b>overflow: </b>hidden;</p>
+                        <div class="overflow-container hidden-example">
+                            <p class="content">Any content that goes beyond the container boundary is completely clipped and cannot be scrolled or accessed.</p>
+                        </div>
+                    </div>
+
+                    <div class="property-block">
+                        <li class="property-title"><b>Clip (Non-Scrollable Hidden)</b></li>
+                        <p class="code-snippet"><b>overflow: </b>clip;</p>
+                        <div class="overflow-container clip-example">
+                            <p class="content">Content is clipped exactly at the boundary. Crucially, the clipped content is **forbidden from being scrolled** (even programmatically).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="property-block">
+                        <li class="property-title"><b>Clip-Margin (Advanced Clipping)</b></li>
+                        <p class="code-snippet"><b>overflow: </b>clip; <br><b>overflow-clip-margin: </b>15px;</p>
+                        <div class="overflow-container clip-margin-example">
+                            <p class="content">This uses `overflow: clip;` but the clip boundary is extended **15px outward** from the element's box, allowing content to slightly overhang before being clipped. </p>
+                        </div>
+                    </div>
+
+                    <div class="property-block">
+                        <li class="property-title"><b>Scroll</b></li>
+                        <p class="code-snippet"><b>overflow: </b>scroll;</p>
+                        <div class="overflow-container scroll-example">
+                            <p class="content">Both vertical and horizontal scrollbars are **always** added to the box, even if they are not strictly needed for the content.</p>
+                        </div>
+                    </div>
+
+                    <div class="property-block">
+                        <li class="property-title"><b>Auto (Best Practice)</b></li>
+                        <p class="code-snippet"><b>overflow: </b>auto;</p>
+                        <div class="overflow-container auto-example">
+                            <p class="content">Scrollbars are **only** added if the content actually overflows the container in that specific direction. This is the most common and recommended value.</p>
+                        </div>
+                    </div>
+                </ul>
+
+                <hr>
+
+                <li><strong>Overflow-x / Overflow-y (Directional Control)</strong></li>
+                <ul class="axis-examples">
+                    <div class="property-block">
+                        <li class="property-title"><b>Overflow-x (Horizontal Scroll)</b></li>
+                        <p class="code-snippet"><b>overflow-x: </b>scroll; <b>overflow-y: </b>hidden;</p>
+                        <div class="overflow-container axis-x-example">
+                            <div class="content wide-content">
+                                This line of text is intentionally very long (using <code>white-space: nowrap</code>) to force horizontal overflow, resulting in a horizontal scrollbar.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-block">
+                        <li class="property-title"><b>Overflow-y (Vertical Scroll)</b></li>
+                        <p class="code-snippet"><b>overflow-x: </b>hidden; <b>overflow-y: </b>scroll;</p>
+                        <div class="overflow-container axis-y-example">
+                            <p class="content">This content is intentionally tall to cause vertical overflow. The `overflow-y: scroll` property adds a vertical scrollbar.<br>Another line.<br>One more line here.<br>Final line for vertical scroll.</p>
+                        </div>
+                    </div>
+                </ul>
+                
+                <hr>
+
+                <li><strong>Overflow-wrap (Handling Long Words)</strong></li>
+                <ul class="wrap-examples">
+                    <p>This property solves the issue of a single, continuous word being wider than the container width, causing layout breakage (horizontal overflow).</p>
+                    
+                    <div class="property-block">
+                        <li class="property-title"><b>Problem: Visible Overflow (No Scrollbar)</b></li>
+                        <p class="code-snippet"><b>overflow: </b>visible; <br><b>overflow-wrap: </b>normal;</p>
+                        <div class="overflow-container visible-overflow-problem-example">
+                            <p class="content">The long word <span class="long-word">asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa</span> ignores the narrow container boundary and spills out. </p>
+                        </div>
+                    </div>
+                    <div class="property-block">
+                        <li class="property-title"><b>Default Problem (Causes Scrollbar)</b></li>
+                        <p class="code-snippet"><b>overflow: </b>auto; <br><b>overflow-wrap: </b>normal;</p>
+                        <div class="overflow-container wrap-example normal-wrap-example">
+                            <p class="content">If the container has `overflow: auto;`, the long word <span class="long-word">UnbreakableWordddddddddddddddddddddddddddddddddddddddddddddddddddddd</span> will cause a horizontal scrollbar.</p>
+                        </div>
+                    </div>
+
+                    <div class="property-block">
+                        <li class="property-title"><b>Solution 1: Overflow-wrap: break-word</b></li>
+                        <p class="code-snippet"><b>overflow-wrap: </b>break-word;</p>
+                        <div class="overflow-container wrap-example break-word-example">
+                            <p class="content">With <code>break-word</code>, the long word <span class="long-word">UnbreakableWordddddddddddddddddddddddddddddddddddddddddddddddddddddd</span> is forced to break onto the next line, preventing the horizontal overflow. </p>
+                        </div>
+                    </div>
+                    
+                    <div class="property-block">
+                        <li class="property-title"><b>Solution 2: Overflow-wrap: anywhere</b></li>
+                        <p class="code-snippet"><b>overflow-wrap: </b>anywhere;</p>
+                        <div class="overflow-container wrap-example anywhere-wrap-example">
+                            <p class="content"><code>anywhere</code> is similar to `break-word` but also contributes to the element's minimum width sizing, making the layout slightly more flexible.</p>
+                        </div>
+                    </div>
+                </ul>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
